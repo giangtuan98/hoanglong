@@ -176,4 +176,7 @@ return [
         'title' => 'Xóa khu vực/quận',
         'slug' => 'xoa-khu-vuc'
     ],
+    'view_report' => [
+        'title' => 'Xem thống kê'
+    ]
 ];

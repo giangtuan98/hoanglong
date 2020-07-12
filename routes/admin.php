@@ -170,5 +170,14 @@ Route::group([
             Route::get('/change-password', 'ProfileController@getChangePasswordForm')->name('change_password');
             Route::post('/change-password', 'ProfileController@changePassword');
         });
+
+        Route::group([
+            'as' => 'report.',
+            'prefix' => 'reports'
+        ], function () {
+            Route::get('/', 'ReportController@index')->name('index');
+            Route::get('/search', 'ReportController@search')->name('search');
+            Route::get('/excel', 'ReportController@excel')->name('excel');
+        });
     });
 });

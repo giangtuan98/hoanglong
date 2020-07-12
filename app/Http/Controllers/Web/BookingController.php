@@ -148,7 +148,8 @@ class BookingController extends Controller
         }
         $ticketData['ticketCode'] = $ticket->code;
         $view = view('web.booking.step4', ['ticketData' => $ticketData])->render();
-        SendMailJob::dispatch($ticketData);
+        // SendMailJob::dispatch($ticketData);
+        Mail::to($this->ticketData['passengerEmail'])->send(new SendMail($this->ticketData));
         $brand = $ticket->brand;
         $routeName = $ticketData['routeName'];
         $this->newTicketNotification($brand, $ticket, $routeName);
@@ -236,8 +237,11 @@ class BookingController extends Controller
             'ticketCode' => $ticket->code,
             'passengerName' => $ticket->passenger_info['name'],
         ];
-        CancelTicketJob::dispatch($ticketData);
         
+        $ticketData['view'] = 'web.mail.cancel_ticket';
+        $ticketData['subject'] = __('Cancel ticket request!');
+        Mail::to($this->data['to'])->send(new CancelTicketMail($this->data));
+
         $data = [
             'cancelTicketCode' => $randomNumberString,
             'timeExpire' => time() + 100

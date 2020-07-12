@@ -64,6 +64,12 @@ class SidebarHelper {
       'icon' => 'fas fa-users',
       'permission' => 'xem-nguoi-dung'
     ],
+    'report' => [
+      'title' => 'Thống kê',
+      'url' => 'admin.report.index',
+      'icon' => 'fas fa-table',
+      'permission' => 'xem-chuyen'
+    ]
   ];
 
   public static function getSideBar()
