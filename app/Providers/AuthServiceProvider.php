@@ -7,6 +7,7 @@ use App\Policies\BrandPolicy;
 use App\Policies\DistrictPolicy;
 use App\Policies\PlacePolicy;
 use App\Policies\ProvincePolicy;
+use App\Policies\ReportPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\RoutePolicy;
 use App\Policies\TicketPolicy;
@@ -43,5 +44,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('province', ProvincePolicy::class);
         Gate::resource('district', DistrictPolicy::class);
         Gate::resource('ticket', TicketPolicy::class);
+        Gate::resource('report', ReportPolicy::class);
     }
 }
