@@ -5,7 +5,7 @@
                 <div class="col-sm-4 col-xs-12">
                     <div class="footerContent">
                         <h5></h5>
-                        <a href="index.html" class="footer-logo"><img src="{{url('web_template/Images/logo_xe.jpg')}}" alt="logo_xe" width="235"></a>
+                        <a href="/" class="footer-logo"><img src="{{url('web_template/Images/logo_xe.jpg')}}" alt="logo_xe" width="235"></a>
                         <p> {{ __('Giang Tuấn Transportation Co.,Ltd') }}</p>
                         <p> {{__('Tax Code')}}: 0200383487</p>
                     </div>
@@ -28,25 +28,25 @@
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="footerContent imgGallery">
-                        <h5><a href="thu-vien.html" class="color-white">{{__('Library')}}</a></h5>
+                        <h5><a href="/" class="color-white">{{__('Library')}}</a></h5>
                         <div class="row ">
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="fancybox-pop" href="thu-vien.html"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
+                                <a class="fancybox-pop" href="/"><img src="{{ url('web_template/Content/themes/startravel/img/gallery/hao-1.jpg') }}" alt="image"></a>
                             </div>
                         </div>
                     </div>

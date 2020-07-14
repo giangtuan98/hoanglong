@@ -1,8 +1,8 @@
 <div class="step3" style="display: none;">
-    <a href="javascript:;" class="btn buttonTransparent btnGoToStep" data-step="2">Trở lại bước 2</a>
+    <a href="javascript:;" class="btn buttonTransparent btnGoToStep" data-step="2">{{__('Back to step :step', ['step' => 2])}}</a>
     <div class="panel panel-default pnlconfirminfo packagesFilter margin-top-10">
         <div class="panel-heading">
-            <h3 class="panel-title">Xác nhận thông tin đặt vé</h3>
+            <h3 class="panel-title">{{__("Confirm ticket infor")}}</h3>
         </div>
         <div class="panel-body confirminfo ">
             <input type="hidden" id="hddep" value="10">

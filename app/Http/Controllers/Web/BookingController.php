@@ -100,7 +100,7 @@ class BookingController extends Controller
         // $formData = "passengerName=a&passengerPhone=a&passengerEmail=a%40gmail.com&passengerAddress=a&price=80000&quantity=2&date=30-05-2020&paymenttype=1&tddId=19&brandId=11&departName=B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i&departTime=08%3A30%3A00&desName=B%E1%BA%BFn+xe+Th%C3%A1i+B%C3%ACnh&desTime=11%3A00%3A00&routeName=Tuy%E1%BA%BFn+H%C3%A0+N%E1%BB%99i+-+Th%C3%A1i+B%C3%ACnh+(B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i+-+B%E1%BA%BFn+xe+Th%C3%A1i+B%C3%ACnh)&depProvinceName=H%C3%A0+N%E1%BB%99i&desProvinceName=Th%C3%A1i+B%C3%ACnh&selectedSeats=10%2C11&pickupPlace=101&pickupPlaceName=B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i&pickupTime=08%3A30&tripName=H%C3%A0+N%E1%BB%99i+-+Th%C3%A1i+B%C3%ACnh++8h30";
         $ticketData = [];
         parse_str($formData, $ticketData);
-
+        // return $ticketData;
         $ticketData['userId'] = 0;
         if (auth('web')->check()) {
             $ticketData['userId'] = auth('web')->user()->id;
@@ -136,31 +136,37 @@ class BookingController extends Controller
             $trip->available_seats = $trip->available_seats - $ticketData['quantity'];
             $trip->seat_map = json_encode($seatMap);
             $trip->save();
+            $ticketData['viewName'] = 'web.booking.mail';
+            $ticketData['subject'] = __('Booking ticket successfully!');
+            $ticketData['ticketCode'] = $ticket->code;
+            Mail::to($ticketData['passengerEmail'])->send(new SendMail($ticketData));
+            $view = view('web.booking.step4', ['ticketData' => $ticketData])->render();
+            // SendMailJob::dispatch($ticketData);
+            
+            $brand = $ticket->brand;
+            $routeName = $ticketData['routeName'];
+            $this->newTicketNotification($brand, $ticket, $routeName);
             DB::commit();
+            return response()->json([
+                    'status' => "success",
+                    'data' => [
+                        'view' => $view
+                    ],
+                    "message" => __('Book ticket successfully')
+                ]);
+            
         } catch (\Exception $e) {
             DB::rollBack();
             $view = view('web.booking.step4', ['ticketData' => null])->render();
             return response()->json([
                     'status' => "error",
-                    'data' => $view,
+                    'data' => [
+                        'view' => $view
+                    ],
                     "message" => 'Add ticket fail'
                 ]);
         }
-        $ticketData['ticketCode'] = $ticket->code;
-        $view = view('web.booking.step4', ['ticketData' => $ticketData])->render();
-        // SendMailJob::dispatch($ticketData);
-        Mail::to($this->ticketData['passengerEmail'])->send(new SendMail($this->ticketData));
-        $brand = $ticket->brand;
-        $routeName = $ticketData['routeName'];
-        $this->newTicketNotification($brand, $ticket, $routeName);
-
-        return response()->json([
-                'status' => "success",
-                'data' => [
-                    'view' => $view
-                ],
-                "message" => __('Book ticket successfully')
-            ]);
+        
     }
 
     public function newTicketNotification(Brand $brand,Ticket $ticket, $routeName)
@@ -169,7 +175,7 @@ class BookingController extends Controller
             'type' => 'ticket',
             'message' => "Tuyến xe $routeName có 1 vé xe mới ",
             'code' => $ticket->code,
-            'time' => date('H:i:s d-m-Y', strtotime($ticket->created_at))
+            'time' => date('H:i:s d-m-Y', strtotime($ticket->created_at)),
         ];
         if ($brand) {
             
@@ -182,7 +188,8 @@ class BookingController extends Controller
             'route' => route('admin.ticket.show', [
                 'code' => $ticket->code
             ]),
-            'time' => date('H:i:s d-m-Y', strtotime($ticket->created_at))
+            'time' => date('H:i:s d-m-Y', strtotime($ticket->created_at)),
+            'brand_id' => $brand->id
         ];
 
         $options = [
@@ -240,7 +247,7 @@ class BookingController extends Controller
         
         $ticketData['view'] = 'web.mail.cancel_ticket';
         $ticketData['subject'] = __('Cancel ticket request!');
-        Mail::to($this->data['to'])->send(new CancelTicketMail($this->data));
+        Mail::to($ticketData['to'])->send(new CancelTicketMail($ticketData));
 
         $data = [
             'cancelTicketCode' => $randomNumberString,
@@ -274,7 +281,7 @@ class BookingController extends Controller
 
             if ($ticket->code != TicketStatus::getValue('Cancel')) {
                 DB::transaction(function () use ($ticket){
-                    $this->ticketRepository->changeStatus($ticket->code, $ticket->getNextStatus());
+                    $this->ticketRepository->changeStatus($ticket->code, $ticket->getNextCancelStatus());
                     $this->ticketRepository->rollback($ticket->code);
                 });
             }

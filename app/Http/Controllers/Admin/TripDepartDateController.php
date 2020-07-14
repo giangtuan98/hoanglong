@@ -125,7 +125,7 @@ class TripDepartDateController extends Controller
         $fromDate = $request->fromDate;
         $toDate = $request->toDate;
         $routeId = $request->routeId;
-
+        
         if (!$fromDate || !$toDate) {
             return response()->json([
                 'status' => 404,
@@ -154,7 +154,6 @@ class TripDepartDateController extends Controller
                 }
             }
         }
-
         if (!insertArrayData('trip_depart_dates',$insertData)) {
             return response()->json([
                 'status' => 404,

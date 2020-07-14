@@ -73,10 +73,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <b>{{ __('Expected customers will board the car in :place at', ['place' => $ticketData['pickupPlaceName']])}}</b>
+                        <b>{{ __('Expected customers will board the car in')}} <a href="{{$ticketData['pickupPlaceUrl']}}" target="_blank">{{$ticketData['pickupPlaceName']}}</a> {{__('at')}}</b>
                     </td>
                     <td>
-                        <span class="bold">{{$ticketData['departTime'] . ' Ngày ' . $ticketData['date']}}</span>
+                        <span class="bold">{{$ticketData['pickupTime'] . ' Ngày ' . $ticketData['date']}}</span>
                     </td>
                 </tr>
                 <tr>

@@ -68,7 +68,7 @@
     "I agreed with the terms and policies for using service": "Tôi đồng ý với các điều khoản sử dụng dịch vụ",
     "Operation Center Department, Giang Tuan Transport Co.,Ltd, No 5, Pham Ngu Lao, Ngo Quyen Distric, Hai Phong, VietNam.": "Phòng Điều hành trung tâm, Công ty TNHH vận tải Giang Tuấn, Số 21 Ngõ 41 Đông Tác Đống Đa Hà Nội",
     "Payments method": "Hình thức thanh toán",
-    "Expected customers will board the car in :place at": "Dự kiến khách hàng sẽ lên xe tại :place lúc",
+    "Expected customers will board the car in": "Dự kiến khách hàng sẽ lên xe tại",
     "at": "lúc",
     "Total price": "Tổng tiền",
     "Booking confirmation": "Xác nhận đặt vé",
@@ -127,5 +127,12 @@
     "not refund yet": "Chưa hoàn lại tiền",
     "Ticket cancellation period has expired": "Thời gian hủy vé đã hết hạn",
     "Check your email to get verification code": "Kiểm tra email của bạn để lấy mã xác nhận",
-    "booked": "Đã đặt"
+    "booked": "Đã đặt",
+    "Cancel ticket request!": "Yêu cầu hủy vé",
+    "Empty seat": "Ghế trống",
+    "Booked seat": "Ghế đã được đặt",
+    "Choosen seat": "Ghế bạn chọn",
+    "Back to step :step": "Trở lại bước :step",
+    "Confirm ticket infor": "Xác nhận thông tin đặt vé",
+    "Customer information": "Thông tin khách hàng"
 }

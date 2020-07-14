@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-sm-12">
             <form action="#" class="form" id="frBookingStep2" method="post"> 
-                <a href="javascript:void(0)" class="btn buttonTransparent btnGoToStep" data-step="1">Trở lại bước 1</a>
+                <a href="javascript:void(0)" class="btn buttonTransparent btnGoToStep" data-step="1">{{__('Back to step :step', ['step' => 1])}}</a>
                 <div class="panel panel-default margin-top-10 pnlcustomerinfo packagesFilter">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Thông tin khách hàng</h3>
+                        <h3 class="panel-title">{{__('Customer information')}}</h3>
                     </div>
                     <div class="panel-body customerinfo">
                         <div class="form-group">

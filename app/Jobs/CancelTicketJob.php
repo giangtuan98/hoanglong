@@ -35,6 +35,10 @@ class CancelTicketJob implements ShouldQueue
     {
         $this->data['view'] = 'web.mail.cancel_ticket';
         $this->data['subject'] = __('Cancel ticket request!');
-        Mail::to($this->data['to'])->send(new CancelTicketMail($this->data));
+        try {
+            Mail::to($this->data['to'])->send(new CancelTicketMail($this->data));
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 }

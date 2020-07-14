@@ -8,15 +8,15 @@
       <div>
         <div class="seat-description">
           <div class="seat seat-default"></div>
-          <p>Ghế trống</p>
+          <p>{{__('Empty seat')}}</p>
         </div>
         <div class="seat-description">
           <div class="seat seat-blue"></div>
-          <p>Ghế bạn chọn</p>
+          <p>{{__('Choosen seat')}}</p>
         </div>
         <div class="seat-description">
           <div class="seat seat-gray"></div>
-          <p>Ghế đã được đặt</p>
+          <p>{{__('Booked seat')}}</p>
         </div>
       </div>
       

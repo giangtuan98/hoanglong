@@ -136,6 +136,7 @@ class EloquentTicketRepository extends EloquentBaseRepository implements TicketR
                 $data['status'] == TicketStatus::getValue('Booked') ? $q->whereIn('status', [TicketStatus::getValue('Unpaid'), TicketStatus::getValue('Paid')]) : $q->where('status', $data['status']);
             }
         })
+        ->where('brand_id', getAuthAdminBrandId())
         ->with('tripDepartDate:id,depart_date')
         ->get();
         return $tickets;
