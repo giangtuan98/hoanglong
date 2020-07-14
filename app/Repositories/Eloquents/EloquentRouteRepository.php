@@ -57,11 +57,11 @@ class EloquentRouteRepository extends EloquentBaseRepository implements RouteRep
 
         $formatDate = date("Y-m-d", strtotime($data['departDate']));
 
-        $now = Carbon::now()->timestamp;
-        if ($now >= strtotime($data['departDate'])) {
-            $timeNow = Carbon::now()->format('H:i:00');
-        } else {
+        $now = Carbon::now()->addHours(12)->timestamp;
+        if ($now <= strtotime($data['departDate'])) {
             $timeNow = '00:00:00';
+        } else {
+            $timeNow = Carbon::now()->addHours(12)->format('H:i:00');
         }
 
         $whereBrandId = isset($data['brand_id']) ? [['b.id', $data['brand_id']]] : [];

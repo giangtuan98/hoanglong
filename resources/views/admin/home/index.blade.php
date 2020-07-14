@@ -141,7 +141,7 @@
 				<a href="{{route('admin.report.search', ['from_date' => date('Y-m-d'), 'to_date' => date('Y-m-d')])}}">
 				<div class="tile-stats">
 					<div class="icon"><i class="fas fa-coins"></i></div>
-					<div class="count">{{number_format($todayTicket->sum('total'))}}</div>
+					<div class="count">{{number_format($todayTicket->where('status', __('paid'))->sum('total'))}}</div>
 					<h3>Doanh thu</h3>
 					<p>Doanh thu theo ngày.</p>
 				</div>
@@ -161,7 +161,7 @@
 				<a href="{{route('admin.report.search', ['from_date' => date('Y-m-01'), 'to_date' => date('Y-m-t'), 'status' => 'booked'])}}">
 				<div class="tile-stats">
 					<div class="icon"><i class="fas fa-coins"></i></div>
-					<div class="count">{{number_format($monthTicket->sum('total'))}}</div>
+					<div class="count">{{number_format($monthTicket->where('status', __('paid'))->sum('total'))}}</div>
 					<h3>Doanh thu</h3>
 					<p>Doanh thu theo tháng.</p>
 				</div>

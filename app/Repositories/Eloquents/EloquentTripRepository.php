@@ -45,7 +45,7 @@ class EloquentTripRepository extends EloquentBaseRepository implements TripRepos
 
     public function toggleIsActive(Trip $trip, $isActive)
     {
-        // try {
+        try {
             $listTripDepartDateId = $trip->tripDepartDates()->pluck('id')->toArray();
             CancelTripService::cancelTrip($listTripDepartDateId);
 
@@ -55,9 +55,9 @@ class EloquentTripRepository extends EloquentBaseRepository implements TripRepos
                 $trip->is_active = $isActive;
                 $trip->save();
             });
-        // } catch (\Throwable $th) {
-        //     return false;
-        // }
+        } catch (\Throwable $th) {
+            return false;
+        }
         return true;
     }
 }

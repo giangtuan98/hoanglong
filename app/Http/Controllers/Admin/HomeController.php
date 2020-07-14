@@ -24,7 +24,7 @@ class HomeController extends Controller
         } else {
             $today = date('Y-m-d');
             $todayTicket = $this->ticketRepository->getTicketByDate($today);
-    
+            
             $month = date('m');
             $monthTicket = $this->ticketRepository->getTicketByMonth($month);
         }

@@ -47,7 +47,7 @@
 				<div class="x_panel">
 					<div class="x_title">
 						<h2><i class="fa fa-bars"></i> Thống kê</h2>
-						<button href="{{route('admin.report.excel')}}" target="_blank" class="btn btn-success float-right" id="btnExcel" href="{{route('admin.report.excel')}}"><i class="fa fa-plus"></i> Xuất file excel</button>
+						<button href="{{route('admin.report.excel')}}" target="_blank" class="btn btn-success float-right" id="btnExcel" href="{{route('admin.report.excel')}}"><i class="fas fa-file-excel"></i> Xuất file excel</button>
 						
 						<div class="clearfix"></div>
 						<h3 class="" style="color: red;">Doanh thu: {{number_format($reports->sum('sum_total'))}} VND</h3>

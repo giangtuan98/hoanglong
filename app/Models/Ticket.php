@@ -108,6 +108,18 @@ class Ticket extends Model
         }
     }
 
+    public function getNextCancelStatus()
+    {
+        switch ($this->getOriginal('status')) {
+            case TicketStatus::Unpaid:
+                return TicketStatus::Cancel;
+            case TicketStatus::Paid:
+                return TicketStatus::NotRefundYet;
+            default:
+                return null;
+        }
+    }
+
     public function getNextStatusColor()
     {
         $nextStatus = $this->getNextStatus();
