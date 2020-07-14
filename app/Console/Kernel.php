@@ -29,8 +29,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('trip:create-monthly-schedule')
-                 ->monthlyOn(24, '20:51')
-                 ;
+                 ->monthlyOn(15, '02:42');
+        // $schedule->command('trip:create-monthly-schedule')
+                //  ->everyMinute();
     }
 
     /**

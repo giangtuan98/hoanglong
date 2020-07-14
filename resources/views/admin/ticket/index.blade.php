@@ -95,7 +95,7 @@
 									<th class="text-center">Thời gian</th>
 									<th class="text-center">Ngày đi</th>
 									<th class="text-center">Trạng thái</th>
-									{{-- <th class="text-center">Slug</th> --}}
+									<th class="text-center">Gửi mail hủy vé</th>
 									<th class="text-center">Hành động</th>
 								</tr>
 							</thead>
@@ -111,6 +111,7 @@
 									<td class="text-center">{{date('H:i', strtotime($ticket->trip_info['depart_time'])) . ' - ' . date('H:i', strtotime($ticket->trip_info['des_time']))}}</td>
 									<td class="text-center">{{date('d-m-Y', strtotime($ticket->tripDepartDate->depart_date))}}</td>
 									<td class="text-center {{$ticket->getStatusColor()}}">{{$ticket->status}}</td>
+									<td class="text-center">{{$ticket->sendmail_cancel_status}}</td>
 									{{-- <td class="text-center">{{$ticket->slug}}</td> --}}
 									<td class="text-center">
 										<a href="{{route('admin.ticket.show', ['code' => $ticket->code])}}" class="btn btn-warning" title="Cập nhật"><i class="fas fa-eye"></i></a>

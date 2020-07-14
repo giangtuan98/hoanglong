@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Jobs\CreateTripScheduleJob;
 use App\Models\Brand;
 use App\Models\CarType;
+use App\Models\Ticket;
 use Illuminate\Console\Command;
 
 class CreateTripSchedule extends Command
@@ -40,6 +41,9 @@ class CreateTripSchedule extends Command
      */
     public function handle()
     {
+        // $a = Ticket::find(1);
+        // $a->user_id = $a->user_id + 1;
+        // $a->save();
         $nextMonth = date('m') + 1;
         $currentYear = date('Y');
 

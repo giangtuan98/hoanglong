@@ -75,7 +75,6 @@ class EloquentTripDepartDateRepository extends EloquentBaseRepository implements
         
         $listTDDId = $trip->pluck('id')->toArray();
         CancelTripService::cancelTrip($listTDDId);
-
-        $trip->update(['is_active' => $data['is_active']]);
+        $this->model->whereIn('id', $listTDDId)->update(['is_active' => $data['is_active']]);
     }
 }

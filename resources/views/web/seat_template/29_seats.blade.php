@@ -8,17 +8,17 @@
       <td width="9%"><div align="center"></div></td>
     </tr>
     <tr>
-      <td><div class=" seat seat-gray m-auto" data-id=""></div></td>
+      <td><div class=" seat seat-gray m-auto" data-id="">01</div></td>
       <td></td>
       <td></td>
-      <td><div class=" seat m-auto @if (!$seatMap[1]) seat-default book-seat @else seat-gray @endif" data-id="2">02</div></td>
+      <td><div class=" seat m-auto @if (!$seatMap[2]) seat-default book-seat @else seat-gray @endif" data-id="2">02</div></td>
     </tr>
     <tr>
-      <td><div class=" seat m-auto @if (!$seatMap[2]) seat-default book-seat @else seat-gray @endif" data-id="3">03</div></td>
-      <td><div class=" seat m-auto @if (!$seatMap[3]) seat-default book-seat @else seat-gray @endif" data-id="4">04</div></td>
+      <td><div class=" seat m-auto @if (!$seatMap[3]) seat-default book-seat @else seat-gray @endif" data-id="3">03</div></td>
+      <td><div class=" seat m-auto @if (!$seatMap[4]) seat-default book-seat @else seat-gray @endif" data-id="4">04</div></td>
       <td width="9%"  style="border: none;"><div align="center"></div></td>
-      <td><div class=" seat m-auto @if (!$seatMap[4]) seat-default book-seat @else seat-gray @endif" data-id="5">05</div></td>
-      <td><div class=" seat m-auto @if (!$seatMap[5]) seat-default book-seat @else seat-gray @endif" data-id="6">06</div></td>
+      <td><div class=" seat m-auto @if (!$seatMap[5]) seat-default book-seat @else seat-gray @endif" data-id="5">05</div></td>
+      <td><div class=" seat m-auto @if (!$seatMap[6]) seat-default book-seat @else seat-gray @endif" data-id="6">06</div></td>
     </tr>
     <tr>
       <td><div class=" seat m-auto @if (!$seatMap[7]) seat-default book-seat @else seat-gray @endif" data-id="7">07</div></td>

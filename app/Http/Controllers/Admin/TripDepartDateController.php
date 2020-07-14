@@ -8,6 +8,7 @@ use App\Contracts\Repositories\TripRepository;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TripDepartDateController extends Controller
 {
@@ -178,7 +179,7 @@ class TripDepartDateController extends Controller
                 'message' => 'Kích hoạt chuyến không thành công. Chuyến ' . $trip->name . ' hiện đang ngưng kích hoạt!'
             ]);
         }
-        try {
+        // try {
             $data = [
                 'fromDate' => date('Y-m-d', strtotime($request->fromDate)),
                 'toDate' => date('Y-m-d', strtotime($request->toDate)),
@@ -194,13 +195,13 @@ class TripDepartDateController extends Controller
             // return $data;
             $this->tripDepartDateRepository->changeStatus($data);
 
-        } catch (\Throwable $th) {
-            return response()->json([
-                'status' => 500,
-                'data' => [],
-                'message' => $data['is_active'] ? 'Kích hoạt thất bại' : 'Ngưng kích hoạt thất bại'
-            ]);
-        }
+        // } catch (\Throwable $th) {
+        //     return response()->json([
+        //         'status' => 500,
+        //         'data' => [],
+        //         'message' => $data['is_active'] ? 'Kích hoạt thất bại' : 'Ngưng kích hoạt thất bại'
+        //     ]);
+        // }
         return response()->json([
             'status' => 200,
             'data' => [],

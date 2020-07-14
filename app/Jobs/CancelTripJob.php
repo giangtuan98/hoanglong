@@ -9,7 +9,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 class CancelTripJob implements ShouldQueue
 {
@@ -34,6 +36,13 @@ class CancelTripJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->data['to'])->send(new CancelTripMail($this->data));
+        try {
+            DB::table('tickets')->where('code', 'gHtQuW6zCin')->update(['sendmail_cancel_status' => 'Thành công']);
+
+            Mail::to($this->data['to'])->send(new CancelTripMail($this->data));
+        } catch (Throwable $th) {
+            DB::table('tickets')->where('code', 'like' ,'%gHtQuW6zCin%')->update(['sendmail_cancel_status' => 'Thất bại']);
+
+        }
     }
 }
