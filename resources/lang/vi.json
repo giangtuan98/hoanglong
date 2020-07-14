@@ -128,5 +128,11 @@
     "Ticket cancellation period has expired": "Thời gian hủy vé đã hết hạn",
     "Check your email to get verification code": "Kiểm tra email của bạn để lấy mã xác nhận",
     "booked": "Đã đặt",
-    "Cancel ticket request!": "Yêu cầu hủy vé"
+    "Cancel ticket request!": "Yêu cầu hủy vé",
+    "Empty seat": "Ghế trống",
+    "Booked seat": "Ghế đã được đặt",
+    "Choosen seat": "Ghế bạn chọn",
+    "Back to step :step": "Trở lại bước :step",
+    "Confirm ticket infor": "Xác nhận thông tin đặt vé",
+    "Customer information": "Thông tin khách hàng"
 }

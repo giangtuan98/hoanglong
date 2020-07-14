@@ -113,7 +113,7 @@
 		</div>
 	</div>
 </div>
-<div class="modal fade bs-example-modal-lg in" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+<div class="modal fade bs-example-modal-lg in" tabindex=false role="dialog" aria-hidden="true" style="display: none;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			
@@ -123,10 +123,10 @@
 				<h4 class="modal-title" id="myModalLabel">Lịch chạy</h4>
 			</div>
 			<div class="modal-body">
-				<form id="frmCreateSchedule" method="post" data-mode="single" data-action="create">
+				<form id="frmCreateSchedule" method="post" data-mode="single" data-action="create" style="z-index:9999">
 					<div class="form-group col-md-12">
 						<label for="">Tuyến</label>
-						<select name="route_id" class="form-control select2" id="slRouteId">
+						<select name="route_id" class="form-control select2" id="slRouteId" style="z-index:999999">
 							<option value="" selected></option>
 							@foreach($routes as $route)
 							<option value="{{$route->id}}">{{$route->name}}</option>

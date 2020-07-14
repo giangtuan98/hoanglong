@@ -17,8 +17,8 @@ class ReportController extends Controller
         $this->authorize('report.viewAny');
 
         $data = [
-            'from_date' => date('Y-d-01'),
-            'to_date' => date('Y-d-t')
+            'from_date' => date('Y-m-01'),
+            'to_date' => date('Y-m-t')
         ];
 
         return redirect()->route('admin.report.search', ['from_date' => $data['from_date'], 'to_date' => $data['to_date']]);

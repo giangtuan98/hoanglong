@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="brand-id" content="{{auth('admin')->user()->brand_id}}">
     <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
@@ -91,15 +92,14 @@
     <script src="{{url('admin_template/js/pusher.min.js')}}"></script>
     <script>
       Pusher.logToConsole = true;
-
+      const brand_id = $('meta[name=brand-id]').attr("content")
       var pusher = new Pusher('8c4f80a61d10b83a842d', {
         cluster: 'ap1'
       });
 
       var channel = pusher.subscribe('my-channel');
       channel.bind('my-event', function(data) {
-
-        if (data.type == 'ticket') {
+        if (data.type == 'ticket' && data.brand_id == brand_id) {
           let template = `
           <li>
             <a href="${data.route}">
