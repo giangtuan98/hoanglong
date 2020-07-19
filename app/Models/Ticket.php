@@ -136,7 +136,7 @@ class Ticket extends Model
     {
         // $hours = isset($hours) ? $hours : $this->hoursExpired;
         $runDate = $this->tripDepartDate->depart_date;
-        $runTime = $this->tri_info['depart_time'];
+        $runTime = $this->trip_info['depart_time'];
         $runTimestamp = $runDate . " " . $runTime;
 
         return strtotime($runTimestamp) < (time() + $hours * 3600);

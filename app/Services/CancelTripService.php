@@ -32,7 +32,7 @@ class CancelTripService
         return $q;
       }
       ])->get();
-      
+
       foreach ($tdds as $tdd) {
         foreach ($tdd->tickets as $ticket) {
           $data = [

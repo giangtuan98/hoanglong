@@ -111,7 +111,7 @@ class BookingController extends Controller
         }
 
         $trip = $this->tripDepartDateRepository->find($ticketData['tddId']);
-        if (!isset($trip)) {
+        if (!isset($trip) && $trip->is_active == 0) {
             return null;
         }
 
@@ -222,8 +222,8 @@ class BookingController extends Controller
 
         $ticket = $this->ticketRepository->findByCode($code) ?? null;
 
-        $checkCanCancel = $ticket ? !$ticket->isExpiredInHours(Ticket::$defaultExpiredHours) : false;
-
+        $checkCanCancel = $ticket ? !$ticket->isExpiredInHours(config('constants.UNPAID_TICKET_HOUR_LIMIT')) : false;
+        
         return view('web.tracking.index', [
             'ticket' => $ticket,
             'checkCanCancel' => $checkCanCancel

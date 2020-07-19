@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Contracts\Repositories\RouteRepository;
 use App\Contracts\Repositories\TripDepartDateRepository;
 use App\Contracts\Repositories\TripRepository;
+use App\Enums\TicketStatus;
 use App\Http\Controllers\Controller;
+use App\Jobs\CancelInvalidTicketJob;
+use App\Services\CancelInvalidTicketService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TripDepartDateController extends Controller
 {
@@ -171,7 +175,7 @@ class TripDepartDateController extends Controller
     public function changeStatusSchedule(Request $request)
     {
         $trip = $this->tripRepository->find($request->tripId);
-        if ($request->isActive && !$trip->getOriginal('is_active')) {
+        if ($trip && $request->isActive && !$trip->getOriginal('is_active')) {
             return response()->json([
                 'status' => 500,
                 'data' => [],
@@ -191,7 +195,6 @@ class TripDepartDateController extends Controller
                 $route = $this->routeRepository->find($request->routeId);
                 $data['listTripId'] = $route ? $route->trips()->pluck('id')->toArray() : [];
             }
-            // return $data;
             $this->tripDepartDateRepository->changeStatus($data);
 
         } catch (\Throwable $th) {
@@ -210,6 +213,38 @@ class TripDepartDateController extends Controller
 
     public function test()
     {
-        
+        $currentDate = date('Y-m-d');
+        $currentTime = date('H:i:00');
+        $timestampExpired = Carbon::now()->addHours(config('constants.UNPAID_TICKET_HOUR_LIMIT'))->timestamp;
+        $dateExpire = date('Y-m-d', $timestampExpired);
+        $timeExpire = date('H:i:00', $timestampExpired);
+        // Lay danh sách ve khong hop len => dua vao job de huy ve + rollback ve
+        $listInvalidTicketId = DB::table('tickets')
+        ->join('trip_depart_dates as tdd', 'tickets.trip_depart_date_id', '=', 'tdd.id')
+        ->join('trips as t', 'tdd.trip_id', '=', 't.id')
+        ->where([
+            ["status", TicketStatus::getValue('Unpaid')],
+        ])->where(function ($query) use ($currentDate, $currentTime, $dateExpire, $timeExpire) {
+            $query->where([
+                ['tdd.depart_date', '=', $currentDate],
+                ['t.depart_time', '>', $currentTime],
+            ]);
+            $query->orWhere([
+                ['tdd.depart_date', '>', $currentDate],
+                ['t.depart_time', '>', '00:00:00'],
+            ]);
+        })->where(function ($query) use ($currentDate, $currentTime, $dateExpire, $timeExpire) {
+            $query->where([
+                ['tdd.depart_date', '=', $dateExpire],
+                ['t.depart_time', '<', $timeExpire],
+            ]);
+            $query->orWhere([
+                ['tdd.depart_date', '<', $dateExpire],
+            ]);
+        })
+        ->pluck('tickets.id')
+        ->toArray();
+        // dd($listInvalidTicketId);
+        CancelInvalidTicketService::cancelTicket($listInvalidTicketId);
     }
 }
