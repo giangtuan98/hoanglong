@@ -360,6 +360,7 @@ lightHeader
   $("#submit").click(function () {
     const url = $(this).attr('data-href');
     const ticketCode = $("#ticketCode").text();
+    const cancelCode = $("#cancelCode").val();
 
     if (count) {
       clearInterval(count);
@@ -372,32 +373,47 @@ lightHeader
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
-    $.ajax({
-      type: 'POST',
-      url: url,
-      data: {ticketCode, cancelCode: cancelTicketCode},
-      success(response) {
-        console.log(response);
-        if (response.status == 200) {
-          swal({
-            title: "Success",
-            text: response.message,
-            type: "success",
-          },
-          function(isConfirm){
-            if (isConfirm){
-              window.location.reload();
+    swal({
+      title: "Warning",
+      text: "Bạn có chắc chắn muốn hủy vé này không",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#ee4735',
+      confirmButtonText: 'Xác nhận!',
+    },
+    function(isConfirm){
+      if (isConfirm) {
+        $.ajax({
+          type: 'POST',
+          url: url,
+          data: {ticketCode, cancelCode: cancelCode},
+          success(response) {
+            console.log(response);
+            if (response.status == 200) {
+              swal({
+                title: "Success",
+                text: response.message,
+                type: "success",
+              },
+              function(isConfirm){
+                if (isConfirm){
+                  window.location.reload();
+                }
+              });
+            } else {
+              Alert.Error(response.message);
             }
-          });
-        } else {
-          Alert.Error(response.message);
-        }
-      },
-      error(err) {
-        console.log(err);
+          },
+          error(err) {
+            console.log(err);
+            
+          }
+        });
+      } else {
         
       }
     });
+
   });
 </script>
 @endsection

@@ -26,9 +26,10 @@ class BrandController extends Controller
             'brand'
         ]));
 
-        $brands = Cache::remember($key, 1000, function () {
-            return $this->brandRepository->allActive();
-        });
+        // $brands = Cache::remember($key, 1000, function () {
+        //     return $this->brandRepository->allActive();
+        // });
+        $brands = $this->brandRepository->allActive();
         
         $searchBrand = isset($request->id) ? $brands->find($request->id) : null;
 

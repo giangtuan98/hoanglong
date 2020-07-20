@@ -19,7 +19,7 @@ class CancelTripService
     ->whereHas('tickets', function (Builder $query) {
       $query->where('status', '!=', TicketStatus::getValue('Cancel'));
     })
-    ->whereDate('depart_date', '>', date('Y-m-d'))
+    ->whereDate('depart_date', '>=', date('Y-m-d'))
     ->with([
       'trip:id,name',
       'tickets' => function($q) {
@@ -32,7 +32,7 @@ class CancelTripService
         return $q;
       }
       ])->get();
-
+      
       foreach ($tdds as $tdd) {
         foreach ($tdd->tickets as $ticket) {
           $data = [

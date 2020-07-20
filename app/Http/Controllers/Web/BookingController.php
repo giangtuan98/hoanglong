@@ -100,6 +100,7 @@ class BookingController extends Controller
         // $formData = "passengerName=a&passengerPhone=a&passengerEmail=a%40gmail.com&passengerAddress=a&price=80000&quantity=2&date=30-05-2020&paymenttype=1&tddId=19&brandId=11&departName=B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i&departTime=08%3A30%3A00&desName=B%E1%BA%BFn+xe+Th%C3%A1i+B%C3%ACnh&desTime=11%3A00%3A00&routeName=Tuy%E1%BA%BFn+H%C3%A0+N%E1%BB%99i+-+Th%C3%A1i+B%C3%ACnh+(B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i+-+B%E1%BA%BFn+xe+Th%C3%A1i+B%C3%ACnh)&depProvinceName=H%C3%A0+N%E1%BB%99i&desProvinceName=Th%C3%A1i+B%C3%ACnh&selectedSeats=10%2C11&pickupPlace=101&pickupPlaceName=B%E1%BA%BFn+xe+H%C3%A0+N%E1%BB%99i&pickupTime=08%3A30&tripName=H%C3%A0+N%E1%BB%99i+-+Th%C3%A1i+B%C3%ACnh++8h30";
         $ticketData = [];
         parse_str($formData, $ticketData);
+        $ticketData['brandName'] = Brand::find($ticketData['brandId'])->name;
         // return $ticketData;
         $ticketData['userId'] = 0;
         if (auth('web')->check()) {
@@ -268,7 +269,11 @@ class BookingController extends Controller
 
         $cancelTicketData = Session::get("cancelTicketData$ticketCode");
 
-        if ($cancelCode != $cancelTicketData['cancelTicketCode'] || $cancelTicketData['timeExpire'] < time()) {
+        if ($cancelCode != $cancelTicketData['cancelTicketCode']) {
+            return response()->json(createResponse(505, [], __('Your code is invalid')));
+        }
+
+        if ($cancelCode == $cancelTicketData['cancelTicketCode'] && $cancelTicketData['timeExpire'] < time()) {
             return response()->json(createResponse(505, [], __('Your code has expired')));
         }
 

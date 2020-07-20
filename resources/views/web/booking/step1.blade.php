@@ -52,7 +52,7 @@ $desProvinceName = $desProvince != null ? $desProvince->name : '';
                                         </div>
                                         <div class="col-sm-4 col-xs-12">
                                             <div class="input-group date ed-datepicker">
-                                                <input type="text" class="form-control jqueryuidatepicker" data-mindate="+1D" data-maxdate="+100D" data-format="dd-mm-yy" id="datebook" name="depart_date" readonly="readonly" value="{{$date}}">
+                                                <input type="text" class="form-control jqueryuidatepicker" data-mindate="+0D" data-maxdate="+100D" data-format="dd-mm-yy" id="datebook" name="depart_date" readonly="readonly" value="{{$date}}">
                                                 <div class="input-group-addon">
                                                     <span class="fa fa-calendar"></span>
                                                 </div>

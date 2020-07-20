@@ -65,6 +65,14 @@
                 </tr>
                 <tr>
                     <td>
+                      {{ __('Brand')}}
+                    </td>
+                    <td>
+                      <a href="{{route('brand', ['locale' => app()->getLocale(),'id' => $ticketData['brandId']])}}" target="_blank">{{$ticketData['brandName']}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         {{ __('Route')}}
                     </td>
                     <td>

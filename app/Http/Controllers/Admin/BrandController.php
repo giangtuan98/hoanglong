@@ -97,7 +97,7 @@ class BrandController extends Controller
                 'allActive',
                 'brand'
             ]));
-            Cache::forget($key);
+            // Cache::forget($key);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Thêm nhà xe không thành công')->withInput();
         }
@@ -175,7 +175,7 @@ class BrandController extends Controller
             'allActive',
             'brand'
         ]));
-        Cache::forget($key);
+        // Cache::forget($key);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Thêm nhà xe không thành công')->withInput();
         }
@@ -201,7 +201,7 @@ class BrandController extends Controller
             'allActive',
             'brand'
         ]));
-        Cache::forget($key);
+        // Cache::forget($key);
         // $imagesBrand = $brand->images();
         // $brand->images->detach();
         // $this->imageRepository->unlink($imagesBrand);
