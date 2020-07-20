@@ -11,5 +11,6 @@ return [
         'ACTIVE' => true,
         'DEACTIVATE' => false
     ],
-    'SUPER_ADMIN' => 'super-admin'
+    'SUPER_ADMIN' => 'super-admin',
+    'UNPAID_TICKET_HOUR_LIMIT' => 6
 ];

@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <div class="row">
                                 <label class="col-sm-2 col-xs-12 control-label">{{ __('Address') }}</label>
                                 <div class="col-sm-5 col-xs-12">
