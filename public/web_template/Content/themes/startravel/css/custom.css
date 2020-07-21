@@ -1,0 +1,317 @@
+﻿body {
+    color: #666666;
+}
+
+body, h1, h2, h3, h4, h5, h6, .form .form-group .form-control,
+.commentsForm .form-group .form-control, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group .form-control,
+.searchTour .sbSelector, .searchTour .sbOptions a, .searchFilter .sbSelector {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+/*.form .form-group .form-control, .commentsForm .form-group .form-control, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group .form-control {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.searchTour .sbSelector, .searchTour .sbOptions a, .searchFilter .sbSelector {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}*/
+
+.buttonCustomPrimary {
+    padding: 0 16px;
+}
+
+.blacktext p {
+    color: black;
+}
+
+.datepicker .disabled:hover {
+    cursor: no-drop !important;
+}
+
+.datepicker .disabled {
+    color: #cccfd3 !important;
+    background: transparent !important;
+}
+
+.navbar-brand {
+    background-image: none;
+}
+
+.lightHeader .navbar-brand {
+    background-image: none;
+}
+
+.footer {
+    padding: 40px 0;
+}
+/*.panel-default .panel-heading {
+    color: #fff;
+    background-color: #ee4735;
+    border-color: #ee4735;
+}*/
+
+input.buttonTransparent {
+    background-color: transparent;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    input.buttonTransparent:disabled:hover {
+        border-color: #dedede;
+        color: #969696;
+    }
+
+.buttonTransparent.hover {
+    background-color: #ee4735;
+    border-color: #ee4735;
+    color: #ffffff;
+}
+
+.sbOptions {
+    max-height: 400px !important;
+    z-index: 10000 !important;
+}
+
+input.buttonTransparent:disabled {
+    background: transparent !important;
+}
+
+.form .form-group .form-control {
+    font-size: 15px;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 16px;
+}
+/*Datepicker*/
+#ui-datepicker-div {
+    padding: 0;
+    border: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    z-index: 9999 !important;
+}
+
+.ui-datepicker-header {
+    border: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    background: #ffffff;
+    color: #222222;
+}
+
+.ui-datepicker table {
+    margin: 0;
+}
+
+.ui-datepicker-calendar thead tr:first-child {
+    color: #fff;
+    background-color: rgb(238, 71, 53);
+}
+
+.ui-datepicker .ui-icon {
+    background-image: url(../../../jqueryui-1.11.4-newtheme/images/ui-icons_222222_256x240.png) !important;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+    top: 2px;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 2px;
+    top: 2px;
+}
+
+.ui-state-hover {
+    border: none !important;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+    cursor: pointer;
+}
+
+/*.ui-datepicker td a {
+        margin: 0 3px 10px;
+    padding: 5px;
+    width: 43px;
+    height: 43px;
+}*/
+
+.ui-datepicker td a, .ui-datepicker td span {
+    text-align: center;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    font-weight: 100;
+    border: 1px solid #e5e5e5;
+    background: transparent;
+    color: #969696;
+}
+
+    .ui-state-default:hover, .ui-widget-content .ui-state-default:hover {
+        background: #ee4735;
+        color: #ffffff;
+    }
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-state-active:hover, .ui-widget-content .ui-state-active:hover {
+    border-color: #262a2e;
+    background: #262a2e;
+    color: #ffffff;
+}
+
+.bookingConfirmed .alert {
+    background-image: none;
+}
+
+.bookingConfirmed .alert-success {
+    background-image: url(../img/booking/alert-check.png);
+}
+
+.bookingConfirmed .alert-danger {
+    background-image: url(../img/booking/alert-danger.png);
+}
+
+.bookingConfirmed .alert-warning {
+    background-image: url(../img/booking/alert-warning.png);
+}
+
+.bookingConfirmed .alert-danger .close {
+    color: #a94442 !important;
+}
+
+.bookingConfirmed .alert-warning .close {
+    color: #8a6d3b !important;
+}
+
+.language a {
+    border: none !important;
+}
+
+    .language a:hover {
+        border: none !important;
+    }
+
+.navbar-nav > .language a:after, .navbar-nav > .language a:hover:after {
+    width: 0 !important;
+}
+
+.galleryCarousel .carousel-inner img {
+    width: 1174px;
+    height: 580px !important;
+}
+
+.form .form-group .form-control, .commentsForm .form-group .form-control, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group .form-control {
+    color: #666666;
+}
+
+.copyRight ul li a {
+    font-weight: bold;
+}
+/*.coachestype a {
+    border: none !important;
+}
+.coachestype a:hover {
+    border: none !important;
+}*/
+/*.aboutus .teamMember .memberName p,.aboutus .teamMember .memberName h4 {
+    color: #000 !important;
+}*/
+.aboutTitle {
+    border-bottom: none !important;
+}
+
+p, .accordionsTransparent .panel-group .panel-heading {
+    color: #222222;
+}
+
+.relatedItem img {
+    height: 250px;
+}
+
+.pageLink {
+    z-index: 500;
+}
+
+.expressWrapper {
+    background-image: url(../img/home/promotion/promotion-4.jpg);
+    /*background-attachment: fixed;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    height: 403px;*/
+}
+
+    .expressWrapper .icon img {
+        width: 120px;
+    }
+
+
+.countUpSection .counterCss {
+    line-height: 40px;
+}
+
+.boxbooking p {
+    text-align: justify;
+}
+
+.boxnews .caption {
+    min-height: 130px;
+}
+
+@media (max-width: 767px) {
+    .countUpSection .counterCss {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    .countUpSection .counterCss {
+        font-size: 52px;
+    }
+
+    .boxbooking .caption {
+        min-height: 280px;
+    }
+}
+
+.color-black {
+    color: #333438;
+}
+
+.aboutus .teamMember:hover p, .aboutus .teamMember:hover h4 {
+    color: #ffffff !important;
+}
+
+.aboutus .teamMember .memberName p, .aboutus .teamMember .memberName h4 {
+    color: #ee4735;
+}
+
+.boxbooking .thumbnail.deals .caption .detailsInfo {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.aboutItem p {
+    text-align: justify !important;
+}
+
+.imgGallery h5 a:hover {
+    color: #ee4735;
+}
+
+.pageTitle {
+    background-image: url(../img/pages/page-title-cho-thue-xe.jpg);
+}
+
+.thumbnail.blogPostItem a {
+    height: 260px;
+}

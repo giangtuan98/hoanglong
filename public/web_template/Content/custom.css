@@ -1,0 +1,333 @@
+﻿.margin-right-10 {
+    margin-right: 10px !important;
+}
+
+.margin-left-10 {
+    margin-left: 10px !important;
+}
+
+.margin0 {
+    margin: 0px !important;
+}
+
+.margin10 {
+    margin: 10px !important;
+}
+
+.padding-top-30 {
+    padding-top: 30px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px !important;
+}
+
+.margin-top-10 {
+    margin-top: 10px !important;
+}
+
+.margin-top-20 {
+    margin-top: 20px !important;
+}
+
+.margin-top-30 {
+    margin-top: 30px !important;
+}
+
+.margin-top-50 {
+    margin-top: 50px !important;
+}
+
+.margin-top-100 {
+    margin-top: 100px !important;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px !important;
+}
+
+.padding-left-20 {
+    padding-left: 20px !important;
+}
+.padding-left-30 {
+    padding-left: 30px !important;
+}
+.margin-bottom-0 {
+    margin-bottom: 0px !important;
+}
+
+.margin-top-5 {
+    margin-top: 5px !important;
+}
+
+.w100 {
+    width: 100px !important;
+}
+
+.w200 {
+    width: 200px !important;
+}
+
+.w150 {
+    width: 150px !important;
+}
+
+.w80 {
+    width: 80px !important;
+}
+
+.w300 {
+    width: 300px !important;
+}
+
+.decoration {
+    height: 1px;
+    background-color: rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    display: block;
+    clear: both;
+}
+
+.padding-left02 {
+    padding-left: 2px;
+}
+
+.color-red {
+    color: red !important;
+}
+
+.color-grey {
+    color: #b5b5b5 !important;
+}
+
+.padding-top-20 {
+    padding-top: 20px !important;
+}
+
+.panel-danger > .panel-heading {
+    background-color: #f2dede !important;
+}
+
+.searchTour .nice-select {
+    background-color: #262a2e;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid rgba(222, 222, 222, .3);
+    /*color: #ffffff !important;
+    color: rgba(255, 255, 255, .3) !important;*/
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 42px;
+    text-indent: 0px;
+    height: 45px !important;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin: 4px 0 0 0;
+}
+
+.searchTour .select2 {
+    background-color: #262a2e;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid rgba(222, 222, 222, .3);
+    /*color: #ffffff !important;
+    color: rgba(255, 255, 255, .3) !important;*/
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 42px;
+    text-indent: 0px;
+    height: 45px !important;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin: 4px 0 0 0;
+    width: 100% !important;
+}
+
+.searchTour .select2-container--default .select2-selection--single {
+    background-color: #262a2e;
+    border: none;
+}
+
+    .searchTour .select2-container--default .select2-selection--single .select2-selection__arrow {
+        top: 8px;
+    }
+
+    .searchTour .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 42px;
+        color: #666666;
+    }
+
+.searchFilter .nice-select {
+    border: none;
+    border-bottom: 1px solid #dedede;
+    margin: 4px 0 20px 0;
+    /*color: #ffffff !important;
+    color: rgba(255, 255, 255, .3) !important;*/
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 42px;
+    text-indent: 0px;
+    height: 45px !important;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.nice-select .list {
+    max-height: 400px !important;
+    z-index: 10000 !important;
+    overflow-y: auto;
+}
+.searchTour .nice-select .list {
+    width: 300px;
+}
+.btnCoachesType {
+    height: 35px;
+    line-height: 35px;
+}
+
+.color-white {
+    color: #ffffff;
+}
+
+.thungo p {
+    text-align: left !important;
+}
+
+.boarddirector .teamMember img {
+    /*width: 371px;*/
+    height: 371px;
+}
+
+@media (min-width: 768px) {
+    .boxbooking .progress-wizard > .progress-wizard-step > .progress-wizard-dot {
+        left: 20%;
+    }
+    .boxshortshift .progress-wizard > .progress-wizard-step > .progress-wizard-dot {
+        left: 20%;
+    }
+}
+.boxshortshift .nice-select,.bookingcb .nice-select {
+    padding-left: 0;
+}
+.boxshortshift .sectionTitleDouble {
+    background-image:none;
+}
+.resultshortshift .listshortshift fieldset {
+    min-height: 380px;
+}
+.listshiftcbroundtrip fieldset {
+    min-height: 150px;
+}
+.sectionTitleDouble .book-other {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+}
+.sectionTitleDouble .book-other span {
+    color: #ee4735;
+}
+
+.condition-cb img{
+    width:20%;      
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+@media (min-width : 768px) {
+    .condition-cb img {
+        height: 110px;
+        width: 15%;
+        margin: 10px 0 10px 20px;
+    }      
+}
+.fa-address-book:before {
+    content: "\f2b9";
+}
+
+.fa-address-book-o:before {
+    content: "\f2ba";
+}
+
+.confirm-booking-cb {
+    background: #fff;
+    border-top: 5px solid #ee4735;
+    border-radius:5px;
+    margin-bottom:40px;
+}
+.confirm-booking-cb .pdlef15{
+        padding-left: 15px;
+}
+.confirm-booking-cb .title{
+    font-size:16px;
+    text-transform:uppercase;
+    padding:25px 0 10px;
+}
+.confirm-booking-cb .title.spec{
+    padding: 15px 0 0 0;
+    margin-bottom:0;
+}
+.confirm-booking-cb .duration{
+    display:block;
+    padding-top:25px;
+}
+.confirm-booking-cb hr{
+    margin:0;
+}
+.confirm-booking-cb .travel-information .row {
+   margin-bottom: 15px;
+}
+.confirm-booking-cb  .point-icon{
+    width:8px;
+    margin-left:5px;
+}
+@media (min-width : 768px) {
+    .col-sm-1.spec-width {
+        width:8%;
+        padding-right:0;
+    }
+}
+.book-cb-btn {
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+.listshiftcbroundtrip .blockshift {
+    width:17%;
+}
+.list-img-condition {
+    position:relative;
+}
+.list-img-condition img {
+    width:20%;
+}
+.list-img-condition a {
+    position:absolute;
+    bottom:10px;
+    margin-left:10px;
+}
+.pdt-20 {
+    padding-top:20px;
+}
+.vinmart-guide select{
+    padding:5px 0;
+}
+.nothing {
+    background: #FFF;
+    border: 0;
+    color: #ee4735;
+}
+.buttonclose {
+        background-color: #ee4735;
+    border-color: #ee4735;
+    color: #FFF;
+    padding: 10px 15px;
+}
+.go-to-payment{
+    display:inline-block;
+    cursor:pointer;
+}

@@ -1,0 +1,77 @@
+.dz-image img {
+  width: 100%;
+}
+
+.float-right {
+  float: right;
+}
+
+ul.to_do li {
+  background: none;
+}
+
+.shorter {
+  max-width: 250px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.timepicker, .datepicker {
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.timepicker[readonly], .datepicker[readonly] {
+  background-color: #fff;
+}
+
+/* .datepicker {
+  box-shadow: none;
+}
+
+.datepicker[readonly] {
+  background-color: #fff;
+} */
+
+.select2 {
+  width: 100%!important;
+}
+
+.main_menu .fas {
+  width: 26px;
+  opacity: .99;
+  display: inline-block;
+  font-style: normal;
+  font-size: 18px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single {
+  min-height: 34px!important;
+  height: 34px;
+}
+.text-bold {
+  font-weight: bold;
+}
+
+.as-read {
+  background: none!important;
+  border: 1px solid whitesmoke;
+}
+
+.truncate {
+  width: 500px;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

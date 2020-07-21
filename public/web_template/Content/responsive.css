@@ -1,0 +1,125 @@
+﻿
+@media (max-width: 767px) {
+    .boxbooking .thumbnail.deals .caption .detailsInfo {
+        position: inherit;
+    }
+
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border: none;
+        border-top: 1px solid #ddd;
+    }
+
+    .table-bordered {
+        border: none;
+    }
+
+    .confirminfo .listseat {
+        padding: 0 10px;
+    }
+    .listshiftcbroundtrip fieldset, .resultshortshift .listshortshift fieldset, .shortshiftroundtrip fieldset, .seatselected fieldset {
+        min-height: inherit;
+        border: none;
+    }
+    .blockshift {
+        width: 47%;
+    }
+    .shortshift .seatbasic {
+        width: 21% !important;
+    }
+    .seatselected .blockshift3d {
+        width: 49%;
+    }
+    .listshortshift .shift {
+        width: 31%;
+        margin: 1%;
+        float: left;
+        margin-bottom: 4px !important;
+    }
+    .listseat .shiftextra {
+        width: 100%;
+    }
+    .listseat table tr td {
+        padding: 3px;
+    }
+    .image-payment {
+        width: 100%;
+    }
+
+    /*--------- kk -------*/
+    .navbar-main .container{
+        position: relative;
+    }
+    .language-mobile{
+        position: absolute;
+        top: 20px;
+        right: 70px;
+    }
+    .language-mobile img{
+        width: 44px;
+        height: 34px;
+    }
+}
+@media(max-width: 479px){
+    .navbar-header .navbar-brand img{
+        width: 180px;
+    }
+    .language-mobile{
+        right: 60px;
+        top: 22px;
+    }
+    .language-mobile img{
+        width: 36px;
+        height: 27px;
+    }
+    .navbar-default .navbar-header .navbar-toggle{
+        padding: 7px;
+    }
+    .navbar-default .navbar-header .navbar-toggle .icon-bar{
+        width: 18px;
+    }
+}
+@media screen and (min-width: 20em) {
+    
+}
+/*iphone 5*/
+@media screen and (min-width: 320px) and (orientation:portrait) {
+    /* portrait-specific styles */
+
+}
+/*iphone 5*/
+@media (max-width: 767px) and (orientation:landscape) {
+    /* portrait-specific styles */
+    .boxbooking .thumbnail.deals .caption .detailsInfo {
+        position: inherit;
+    }
+}
+/*Iphone 6 plus*/
+@media screen and (min-width: 410px) and (orientation:portrait) {
+    /* portrait-specific styles */
+   
+}
+/*Iphone 6,Iphone 6 plus*/
+@media screen and (min-width: 660px) and (orientation:landscape) {
+    /* portrait-specific styles */
+    
+}
+/*Google nexus 10*/
+@media screen and (min-width: 800px) and (orientation:portrait) {
+    /* portrait-specific styles */
+    
+}
+/*Laptop*/
+@media screen and (min-width: 1400px) and (orientation:portrait) {
+    /* portrait-specific styles */
+    
+}
+/* portrait */
+@media screen and (orientation:portrait) {
+    /* portrait-specific styles */
+    
+}
+
+/* landscape */
+@media screen and (orientation:landscape) {
+   
+}
